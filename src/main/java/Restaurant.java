@@ -72,5 +72,12 @@ public class Restaurant {
         return name;
     }
 
-
+    public int calculateTotalAmount (List<String> itemNames){
+        int amount = 0;
+        for(String itemName: itemNames) {
+            Item item = findItemByName(itemName);
+            amount += item.getPrice();
+        }
+        return amount;
+    }
 }

@@ -78,4 +78,15 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+
+    @Test
+    public void total_amount_must_be_0_if_no_items_are_selected_from_the_menu() {
+        List<String> selectedItems = new ArrayList<String>();
+
+        int calculatedAmount = restaurant.calculateTotalAmount(selectedItems);
+
+        assertEquals(0, calculatedAmount);
+    }
+
+
 }
