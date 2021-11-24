@@ -89,4 +89,20 @@ class RestaurantTest {
     }
 
 
+    @Test
+    public void total_amount_should_be_350_if_two_items_of_₹_150_and_₹_200_are_added(){
+        List<String> selectedItems = new ArrayList<String>();
+        restaurant.addToMenu("ABC", 150);
+        restaurant.addToMenu("DEF", 200);
+
+        Item item1 = new Item("ABC", 150);
+        Item item2 = new Item("DEF", 200);
+        selectedItems.add(item1.getName());
+        selectedItems.add(item2.getName());
+
+        int calculatedAmount = restaurant.calculateTotalAmount(selectedItems);
+
+        assertEquals(350, calculatedAmount);
+    }
+
 }
